@@ -1,0 +1,8 @@
+lambda = 3, L = 12
+Nodes: 1728, Edges: 295488
+Mean degree (numerical): 342.0000000000
+Mean degree (expected) : 342
+Numerical mean curvature: -244.684210526315780
+Closed-form curvature   : -244.684210526315780
+Absolute difference     : 0.00e+00
+Relative difference     : 0.00e+00

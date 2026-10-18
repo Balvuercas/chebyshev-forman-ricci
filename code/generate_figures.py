@@ -88,7 +88,7 @@ def figure2():
 
 
 def figure3():
-    # Función mantenida intacta (ya generaba la figura correctamente)
+    # Función mantenida intacta (matemática sin modificar)
     lambdas = np.arange(1, 201)
     inv_vals = np.abs(mean_curvature(lambdas)) * lambdas**3 / degree(lambdas)**2
     inv_limit = 47.0 / 512.0
@@ -103,8 +103,16 @@ def figure3():
     ax.set_xlabel(r'Inverse resolution $1/\lambda$')
     ax.set_ylabel(r'Invariant $\mathcal{I}(\lambda)$')
     ax.set_xlim([0, 1.0])
+    
+    # Límites y ticks del eje y
+    ax.set_ylim(0.02, 0.10)
+    ax.set_yticks([0.02, 0.04, 0.06, 0.08, 0.10])
+    
     ax.grid(True, linestyle='--', alpha=0.5)
-    ax.legend(loc='lower right')
+    
+    # Cuadro informativo bajado respecto a la línea discontinua superior
+    ax.legend(loc='upper right', bbox_to_anchor=(0.98, 0.82), framealpha=0.9)
+    
     fig.tight_layout()
     fig.savefig('figures/figure3_invariant.pdf', bbox_inches='tight')
     fig.savefig('figures/figure3_invariant.png', dpi=300, bbox_inches='tight')
